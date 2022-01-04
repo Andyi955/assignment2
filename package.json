@@ -18,7 +18,7 @@
     "copy:nodeModules": "ncp ./node_modules/ build/node_modules",
     "copy:public": "ncp ./public build/public",
     "copy:all": "npm-run-all copy:nodeModules copy:public",
-    "compile:all": "npm-run-all compile:models compile:seed compile:authenticate compile:app compile:db copy:all",
+    "compile:all": "npm-run-all compile:tmdb compile:models compile:seed compile:authenticate compile:app compile:db copy:all",
     "postinstall": "rimraf ./build && npm run compile:all",
     "start": "nodemon --exec babel-node index.js",
     "start:prod": "cross-env SEED_DB=true MONGO_DB=mongodb://localhost/test NODE_ENV=test node build/index.js",

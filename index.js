@@ -43,11 +43,7 @@ app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesRou
 app.use(errHandler);
 
 
-
-
-
-
-
-app.listen(port, () => {
+let server = app.listen(port, () => {
   console.info(`Server running at ${port}`);
 });
+module.exports = server
