@@ -36,34 +36,21 @@ describe("Movies endpoint", () => {
   afterEach(() => {
     api.close(); // Release PORT 8080
   });
-  // describe("GET /api/movies ", () => {
-  //   it("should return 10 movies and a status 200", (done) => {
-  //     request(api)
-  //       .get("/api/movies")
-  //       .set("Accept", "application/json")
-  //       .expect("Content-Type", /json/)
-  //       .expect(200)
-  //       .end((err, res) => {
-  //        expect(res.body).to.be.a("Object");
-  //         expect(res.body.results.length).to.equal(20);
-  //         done();
-  //       });
-  //   });
-  // });
   describe("GET /api/movies ", () => {
-    it("should return 20 movies and a status 200", (done) => {
+    it("should return 10 movies and a status 200", (done) => {
       request(api)
         .get("/api/movies")
         .set("Accept", "application/json")
         .expect("Content-Type", /json/)
         .expect(200)
         .end((err, res) => {
-          expect(res.body).to.be.a("array");
-          expect(res.body.length).to.equal(20);
+         expect(res.body).to.be.a("Object");
+          expect(res.body.results.length).to.equal(20);
           done();
         });
     });
   });
+ 
 
   describe("GET /api/movies/:id", () => {
     describe("when the id is valid", () => {
