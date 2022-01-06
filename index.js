@@ -39,7 +39,7 @@ app.use(express.json());
 app.use(passport.initialize());
 app.use('/api/genres', genreRouter);
 app.use('/api/users', usersRouter);
-app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesRouter);
+app.use('/api/movies',moviesRouter);
 app.use(errHandler);
 
 
